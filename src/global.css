@@ -1,0 +1,8 @@
+@import "tailwindcss";
+/* global.css */
+
+.custom-purple-bg {
+  background-color: #6321ab; /* Light purple background */
+  min-height: 100vh;
+  padding-top: 40px;
+}
