@@ -15,7 +15,7 @@ const ReviewForm = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/review',
+        'https://code-reviewer-backend-aqi6.onrender.com/api/review',
         { code },
         { withCredentials: true }
       );

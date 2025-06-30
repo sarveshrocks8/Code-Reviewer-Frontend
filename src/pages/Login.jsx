@@ -13,7 +13,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://code-reviewer-backend-beta.vercel.app/api/auth/login", {
+      const response = await fetch("https://code-reviewer-backend-aqi6.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -83,7 +83,7 @@ const Login = () => {
 
     <GoogleLoginButton />
 
-    <a href="http://localhost:3000/auth/google">
+    <a href="https://code-reviewer-backend-aqi6.onrender.com/auth/google">
       <button className="mt-4 w-full bg-sky-500 hover:bg-sky-600 text-white py-3 px-6 rounded-xl transition duration-200 font-medium">
         Login with Google
       </button>
