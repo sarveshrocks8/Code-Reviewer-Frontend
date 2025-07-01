@@ -16,6 +16,7 @@ const Login = () => {
       const response = await fetch("https://code-reviewer-backend-aqi6.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include", // ✅ VERY IMPORTANT
         body: JSON.stringify({ email, password }),
       });
 
@@ -35,61 +36,61 @@ const Login = () => {
   };
 
   return (
-   <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-300 via-indigo-200 to-purple-200">
-  {/* Blurred circles for decoration */}
-  <div className="absolute w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse top-0 left-0"></div>
-  <div className="absolute w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse bottom-0 right-0"></div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-300 via-indigo-200 to-purple-200">
+      {/* Blurred circles for decoration */}
+      <div className="absolute w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse top-0 left-0"></div>
+      <div className="absolute w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse bottom-0 right-0"></div>
 
-  {/* Card */}
-  <div className="relative z-10 bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md text-center">
-    <h2 className="text-3xl font-semibold text-gray-800 mb-6">Login</h2>
+      {/* Card */}
+      <div className="relative z-10 bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md text-center">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">Login</h2>
 
-    <form onSubmit={handleLogin} className="space-y-4">
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
-      />
+        <form onSubmit={handleLogin} className="space-y-4">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-        className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
-      />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
 
-      <button
-        type="submit"
-        className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition duration-200 font-medium"
-      >
-        Login
-      </button>
-    </form>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition duration-200 font-medium"
+          >
+            Login
+          </button>
+        </form>
 
-    {message && (
-      <p className="mt-4 text-sm font-medium text-gray-600">{message}</p>
-    )}
+        {message && (
+          <p className="mt-4 text-sm font-medium text-gray-600">{message}</p>
+        )}
 
-    <div className="my-6 flex items-center justify-center">
-      <div className="h-px bg-gray-300 w-1/4"></div>
-      <span className="mx-4 text-gray-500 text-sm">or</span>
-      <div className="h-px bg-gray-300 w-1/4"></div>
+        <div className="my-6 flex items-center justify-center">
+          <div className="h-px bg-gray-300 w-1/4"></div>
+          <span className="mx-4 text-gray-500 text-sm">or</span>
+          <div className="h-px bg-gray-300 w-1/4"></div>
+        </div>
+
+        <GoogleLoginButton />
+
+        <a href="https://code-reviewer-backend-aqi6.onrender.com/auth/google">
+          <button className="mt-4 w-full bg-sky-500 hover:bg-sky-600 text-white py-3 px-6 rounded-xl transition duration-200 font-medium">
+            Login with Google
+          </button>
+        </a>
+      </div>
     </div>
-
-    <GoogleLoginButton />
-
-    <a href="https://code-reviewer-backend-aqi6.onrender.com/auth/google">
-      <button className="mt-4 w-full bg-sky-500 hover:bg-sky-600 text-white py-3 px-6 rounded-xl transition duration-200 font-medium">
-        Login with Google
-      </button>
-    </a>
-  </div>
-</div>
 
   );
 };
