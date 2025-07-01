@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext";
-import GoogleLoginButton from "./GoogleLoginButton";
+// import GoogleLoginButton from "./GoogleLoginButton";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -82,7 +82,7 @@ const Login = () => {
           <div className="h-px bg-gray-300 w-1/4"></div>
         </div>
 
-        <GoogleLoginButton />
+        {/* <GoogleLoginButton /> */}
 
         <a href="https://code-reviewer-backend-aqi6.onrender.com/auth/google">
           <button className="mt-4 w-full bg-sky-500 hover:bg-sky-600 text-white py-3 px-6 rounded-xl transition duration-200 font-medium">
