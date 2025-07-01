@@ -7,10 +7,10 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
- // useEffect(() => {
- //   const storedAuth = localStorage.getItem('isAuthenticated') === 'true';
- //   setIsAuthenticated(storedAuth);
- // }, []);
+//  useEffect(() => {
+//    const storedAuth = localStorage.getItem('isAuthenticated') === 'true';
+//    setIsAuthenticated(storedAuth);
+//  }, []);
 
   const login = () => {
    localStorage.setItem('isAuthenticated', 'true');

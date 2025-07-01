@@ -28,7 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<UsersList />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/review" element={<PrivateRoute><ReviewForm /></PrivateRoute>} />
+              <Route path="/review" element={<ReviewForm />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/historypage" element={<HistoryPage />} />
             </Routes>
