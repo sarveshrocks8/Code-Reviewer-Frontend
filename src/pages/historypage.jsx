@@ -7,7 +7,7 @@ const HistoryPage = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/historypage", {
+        const res = await fetch("https://code-reviewer-backend-aqi6.onrender.com/api/historypage", {
           method: "GET",
           credentials: "include", // for session cookies
         });
